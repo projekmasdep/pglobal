@@ -1,0 +1,249 @@
+<html>
+    <head>
+        <title>Pemanasan Global</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CDN jquery (with ajax) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- CSS bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- CSS file -->
+   <link rel="stylesheet" href="styleeva.css">
+     
+    <!-- JS bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- font by googlefont -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <!-- icon by fontawesome -->
+    <script src="https://kit.fontawesome.com/ba84381fa8.js" crossorigin="anonymous"></script>
+
+    
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 nav">
+                
+                    <a href="#"><i class="fas fa-home"></i></a>
+
+                    <img src="images/58transparent.svg" class= " img-fluid " style= "max-width:70%">
+                    
+                </div>
+            </div>  
+        </div>
+        <div class="apersepsi">
+        
+                    <div class="container mt-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Colomn untuk tampil soal -->
+                                <div class="card">
+                                    <div class="card-header" style="background: lavender">
+                                        <div class="" style="font-family: 'Quicksand'; font-size: 26; text-align: center; color:black">EVALUASI<div class="btn btn-md btn-outline-secondary" style="float:right;" id="time">00 : 00</div></div>
+                                        
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="quiz-container">
+                                            <div id="quiz">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="btn-action text-center">
+                                            <button id="previous" class="btn btn-secondary">Kembali</button>
+                                            <button id="next" class="btn  btn-warning">Selanjutnya</button>
+                                            <button id="submit" class="btn  btn-outline-danger" >Selesai</button>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="card-footer" style="background: lavender;">
+                                        <span class="number-btn" style="float: right;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                               
+                            </div>
+                       </div>
+                    </div>
+            </body>    
+  <script src="soal_evaluasi.js"></script>
+    
+    <script>
+        // melakukan random pada isi array di variabel myQuestion
+        let randomQuestion = myQuestions.sort((a, b) => {return 0.5 - Math.random()})
+
+        // melakukan pemotongan array batasan soal yang ingin diambil
+        let sliceQuestion = randomQuestion.slice(0, 15)
+
+        function buildQuiz() {
+            const output = []
+            let currentNumber = 1
+
+            sliceQuestion.forEach((currentQuestion, questionNumber) => {
+                const answers = []
+
+                for(letter in currentQuestion.answers) {
+                    answers.push(
+                        `
+                           <label>
+                                <input type="radio" name="question${questionNumber}" value="${letter}"> 
+                                <span>${letter}. ${currentQuestion.answers[letter]}</span>
+                            </label> 
+                        `
+                    )
+                }
+
+                output.push(
+                    `
+                        <div class="slide">
+                            <div class="question">${currentNumber}. ${currentQuestion.question}</div>
+                            <hr>
+                            <div class="answers">${answers.join("")}</div>
+                        </div>
+                    `
+                )
+                currentNumber++
+            })
+            questionContainer.innerHTML = output.join("")
+        }
+
+        function results() {
+            const answerContainers = questionContainer.querySelectorAll('.answers')
+
+            let numCorrect = 0
+            let numWrong = 0
+
+            sliceQuestion.forEach((currentQuestion, questionNumber) => {
+                const answerContainer = answerContainers[questionNumber]
+
+                const selector = `input[name=question${questionNumber}]:checked`
+                const userAnswer = (answerContainer.querySelector(selector) || {}).value
+
+                if(userAnswer === currentQuestion.correctAnswer) {
+                    numCorrect++
+                } else {
+                    numWrong++
+                }
+
+            })
+            console.log(numCorrect)
+            console.log(numWrong)
+            sessionStorage.setItem('questionLength', sliceQuestion.length)
+            sessionStorage.setItem('correct', numCorrect)
+            sessionStorage.setItem('wrong', numWrong)
+            location.replace('./hasil-eva.html')
+        }
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active-slide')
+            slides[n].classList.add('active-slide')
+
+            const answerContainers = questionContainer.querySelectorAll('.answers')
+            const answerContainer = answerContainers[currentSlide]
+            const selector = `input[name=question${currentSlide}]:checked`
+            const userAnswer = (answerContainer.querySelector(selector) ||{}).value
+
+            if (userAnswer != undefined) {
+                numberSoal[currentSlide].classList.add('color')
+            }
+
+            currentSlide = n
+
+            if(currentSlide === 0) {
+                previousButton.style.display = 'none'
+            } else {
+                previousButton.style.display = 'inline-block'
+            }
+
+            if(currentSlide === slides.length-1) {
+                nextButton.style.display = 'none'
+                submitButton.style.display = 'inline-block'
+            } else {
+                nextButton.style.display = 'inline-block'
+                submitButton.style.display = 'none'
+            }
+        }
+
+        function showNextSlide() {
+            showSlide(currentSlide + 1)
+        }
+
+        function showPreviousSlide() {
+            showSlide(currentSlide - 1)
+        }
+
+        function paginationSlide(n) {
+            showSlide(n)
+        }
+        
+        // DOM Show question
+        let questionContainer = document.getElementById("quiz")
+        let nextButton = document.querySelector("#next")
+        let previousButton = document.querySelector("#previous")
+        let submitButton = document.querySelector("#submit")
+        buildQuiz()
+        const slides = document.querySelectorAll(".slide")
+        let currentSlide = 0
+        
+        showSlide(currentSlide)
+        submitButton.addEventListener("click", results)       
+        nextButton.addEventListener("click", showNextSlide)
+        previousButton.addEventListener("click", showPreviousSlide)
+
+        let numberBtn = document.querySelector(".number-btn")
+
+        for(i=0; i<sliceQuestion.length; i++) {
+            let li = document.createElement("span")
+            li.innerHTML = `
+            <button type="button" class="btn btn-sm btn-outline-secondary btn numberSoal" style="padding: 6px 11px;" " onclick="paginationSlide(${i})">${i+1}</button>`
+
+            numberBtn.appendChild(li)
+        }
+
+        let numberSoal = document.querySelectorAll(".numberSoal")        
+
+        let showTime = document.querySelector("#time")
+        let startMinutes = 30
+        let seconds = 0
+
+        function countdown() {
+            setTimeout(countdown, 1000)
+            seconds = seconds < 10 ? '0' + seconds : seconds
+            showTime.innerHTML = `${startMinutes} : ${seconds}`
+
+            seconds--
+            if(seconds < 0) {
+                seconds = 59
+                startMinutes--
+            }
+
+            if(startMinutes < 0) {
+                startMinutes = 0
+                seconds = 0
+            }
+
+            if(startMinutes === 0 && seconds === 0)
+                results()
+
+            if(startMinutes > 30)
+                submitButton.setAttribute("disabled", "")
+
+            if(startMinutes < 30) {
+                submitButton.removeAttribute("disabled", "")
+                submitButton.classList.remove('btn-outline-danger')
+                submitButton.classList.add('btn-danger')
+            }
+        }
+
+        countdown()
+
+    </script>
+
+
+    </body>
+
+</html>

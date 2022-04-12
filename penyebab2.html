@@ -1,0 +1,511 @@
+<html>
+	<head>
+		<title>Pemanasan Global</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- CDN jquery (with ajax) -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+	<!-- CSS bootstrap -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- CSS file -->
+	<link rel="stylesheet" href="styletiga.css">
+	<!-- JS bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- font by googlefont -->
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+    rel="stylesheet">
+	<!-- icon by fontawesome -->
+	<script src="https://kit.fontawesome.com/ba84381fa8.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+	</head>
+
+	<body>
+			
+<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 nav">
+				
+					<a href="javascript:void(0)" id="menubar" onclick="openSidebar();"aria-hidden="true"><i class="fas fa-bars "></i></a>
+
+					<a href="beranda.html"><i class="fas fa-home"></i></a>
+
+					<img src="images/58transparent.svg" class= " img-fluid " style= "max-width:70%">
+					
+				</div>
+			</div>	
+		</div>
+		
+ 
+<div class="wrapper">
+
+		<div id="sidebar">
+			<div class="row">
+			<div class="col-md-12">	
+	
+	<p class="title">Materi</p>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+		
+<ul class="list-unstyled components">
+               
+                
+ <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle ">Efek Rumah Kaca dan <br>Pemanasan Global</a>
+                    <ul class="list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="efekrumahkaca.html">Efek Rumah Kaca</a>
+                        </li>
+                        <li>
+                            <a href="globalwarming.html">Pemanasan Global</a>
+                        </li>
+                        <li class="active sub2">
+                            <a href="#">Penyebab Pemanasan Global</a>
+                        </li>
+                        <li>
+                            <a href="kuislogin.html">Kuis 1</a>
+                        </li>
+                    </ul>
+                </li>
+            
+                 
+                   <li> <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle ">Dampak dan Upaya <br> Pengendalian<br> Pemanasan Global</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="dampak.html">Dampak Pemanasan Global</a>
+                        </li>
+                        <li>
+                            <a href="upaya.html">Upaya Pengendalian Pemanasan Global</a>
+                        </li>
+                        
+                        <li>
+                            <a href="kuislogin2.html">Kuis 1</a>
+                        </li>
+                    </ul>
+                </li>
+<li>
+                    <a href="evaluasilogin.html">Evaluasi</a>
+                </li>
+                </ul>
+
+</div>
+</div>
+</div>
+
+		<div id="konten">
+
+<div class="judulmateri text-center">
+Penyebab Pemanasan Global
+</div>
+			<div class="container-fluid">
+
+			<div class="row">
+
+			<div class="col-md-7 materi">
+
+				
+		<div class="mt-5">
+<b class="anak_subbab">2. Maraknya Deforestasi</b>
+	</div>
+	<p class="text-justify mt-3 p-2">
+		Apa itu deforestasi? <span class="imagelinks" onclick="openGambar(event, 'deforestasi')" id="defaultOpen">Deforestasi</span> adalah pengalihan fungsi hutan menjadi usaha seperti perkebunan kelapa sawit, penambangan, perumahan, penjualan kayu hutan, dan lain-lain. Selain itu, tidak jarang deforestasi dilakukan dengan pembakaran lahan yang semakin menyumbang banyaknya karbon dioksida. Akibat deforestasi, gas CO₂ yang seharusnya diserap oleh hutan menjadi semakin berlimpah karena tidak terserap. Padahal hutan berperan penting sebagai penyeimbang kadar CO₂ di udara.
+	<span id="deforestasi2"></span>
+	<span id="globalwarming2"></span><br>
+</p>
+
+
+<div class="mt-5">
+	<b class="anak_subbab">3. Pertanian dan Peternakan</b>
+	</div>
+<p class="text-justify mt-3 p-2">
+Bidang <span class="imagelinks" onclick="openGambar(event, 'pertanian')">pertanian</span> dan <span class="imagelinks" onclick="openGambar(event, 'peternakan')">peternakan</span> juga menyumbang gas rumah kaca berupa gas dinitrogen oksida dan metana. Yaitu penggunaan pupuk yang ikut diserap mikroba pada tanah. Penyerapan oleh mikroba akan menghasilkan gas buangan dinitrogen oksida (N₂O) yang diteruskan ke atmosfer. Dibidang peternakan, hewan ternak khususnya yang memiliki pencernaan ruminansia seperti sapi, kambing, dan domba menghasilkan gas metana (CH₄) melalui kentut dan kotoran hewan tersebut. <br>
+<span id="pertanian2"></span>
+
+<span id="peternakan2"></span>
+</p>
+
+	<div class="mt-5">
+	<b class="anak_subbab">4. Pembuangan Sampah</b>
+	</div>
+	<p class="text-justify mt-3 p-2">
+<span class="imagelinks" onclick="openGambar(event, 'sampah')">Sampah</span> dapat memicu pemanasan global jika tidak dikelola dengan tepat.  Sampah-sampah dilapangan terbuka, terutama sampah organik yang membusuk,  menjadi sumber pembentukan gas metana (CH₄) melalui proses pembusukan yang dilakukan bakteri.
+<span id="sampah2"></span>
+</p>
+
+<div class="mt-5">
+	<b class="anak_subbab">5. Penggunaan Alat yang Mengandung CFC</b>
+</div>
+<p class="text-justify mt-3 p-2">
+	Kloro Fluro Karbon (CFC) adalah kelompok gas rumah kaca yang banyak terkandung dalam alat-alat yang biasa digunakan sehari-hari, seperti pada <span class="imagelinks" onclick="openGambar(event, 'freon')">mesin pendingin (freon) </span> yang terdapat pada kulkas dan AC (air conditioner),digunakan juga sebagai bahan pembuat plastik, bahan pembuat busa, dan bahan aktif pemadam kebakaran. CFC juga banyak digunakan pada <span class="imagelinks" onclick="openGambar(event, 'semprotan')">kaleng semprot</span> seperti cat pylox, hair spray, parfum dan sebagainya. Meskipun jumlahnya tidak sebanyak gas rumah kaca lain, gas CFC dapat mempunyai masa hidup paling lama dibanding gas rumah kaca lainnya hingga 100 tahun.
+<span id=freon2></span>
+
+<span id=semprotan2></span>
+		</p>	
+
+<div class="kuis text-center"><h5>Kuis</h5><hr style="margin-bottom: 5px;">
+	<p>Jawablah pertanyaan berikut berdasarkan apa yang telah kamu pelajari!</p>
+		<ol style="text-align: left; padding:1rem; padding-bottom:">
+				 <form name="soal" id="soal1" style="padding-bottom: 0.5rem; margin-top:; display: block;">
+					<li style="padding: 0.5rem;">Di bawah ini perilaku yang menghasilkan gas rumah kaca adalah....
+					</li>
+								
+						<div class="custom-control custom-radio radiocontainer">
+							<input type="radio" class="custom-control-input" name="quiz" id="1_a" onclick="salah_no1()" value="1">
+								<label class="custom-control-label" for="1_a">a. Membangun rumah kaca
+								</label>
+						</div>
+
+						<div class="custom-control custom-radio radiocontainer">
+							<input type="radio" class="custom-control-input" name="quiz" id="1_b" onclick="salah_no1()" value="2">
+								<label class="custom-control-label" for="1_b">b. Bersepeda
+								</label>
+						</div>
+
+						
+						<div class="custom-control custom-radio radiocontainer">
+							<input type="radio" class="custom-control-input " name="quiz" onclick="benar_no1()" id="1_c" value="3">
+								<label class="custom-control-label checked" for="1_c">c. Membakar sampah
+								</label>
+						</div>
+	
+
+						<div class="custom-control custom-radio radiocontainer">
+							<input type="radio" class="custom-control-input" name="quiz" onclick="salah_no1() "id="1_d" value="4">
+								<label class="custom-control-label" for="1_d">d. Menggunakan peralatan dari kaca
+								</label>
+								</div>
+								
+					</form>
+
+<div id="incorrect_answer" class="incorrect_answer" style="float:right; "><h6>Salah!</h6></div>
+<div id="correct_answer" class="correct_answer" style="float: right;"><h6>Benar!</h6></div>
+<span id="respon" style="color: grey;font-weight:bold;"></span>
+
+<form name="soal" id="soal2" style="padding-bottom: 0.5rem; margin-top:; display: none;"><br><br><br>
+					<li style="padding: 0.5rem;">Salah satu jenis gas rumah kaca berikut yang berasal dari penggunaan kulkas atau lemari es adalah.....
+					</li>
+								
+						<div class="custom-control custom-radio radiocontainer">
+							<input type="radio" class="custom-control-input" name="quiz" id="2_a" onclick="benar_no2()" value="1">
+								<label class="custom-control-label" for="2_a">a. Kloroflurokarbon (CFC)
+								</label>
+						</div>
+
+						<div class="custom-control custom-radio radiocontainer">
+							<input type="radio" class="custom-control-input" name="quiz" id="2_b" onclick="salah_no2()" value="2">
+								<label class="custom-control-label" for="2_b">b. Metana (CH₄)
+								</label>
+						</div>
+
+						
+						<div class="custom-control custom-radio radiocontainer">
+							<input type="radio" class="custom-control-input " name="quiz" onclick="salah_no2()" id="2_c" value="3">
+								<label class="custom-control-label checked" for="2_c">c. Karbon dioksida (CO₂)
+								</label>
+						</div>
+	
+
+						<div class="custom-control custom-radio radiocontainer">
+							<input type="radio" class="custom-control-input" name="quiz" onclick="salah_no2() "id="2_d" value="4">
+								<label class="custom-control-label" for="2_d">d. Dinitrogen oksida (N₂O)
+								</label>
+								</div>
+								
+					</form>
+
+<div id="incorrect_answer2" class="incorrect_answer" style="float:right; "><h6>Salah!</h6></div>
+<div id="correct_answer2" class="correct_answer" style="float: right;"><h6>Benar!</h6></div>
+<span id="respon2" style="color: grey;font-weight:bold;"></span>
+</ol><br>
+
+</div>
+<ul class="pagination" style="float: left;">
+<li><a href="penyebab.html" class="prevpage">sebelumnya</a></li>
+</ul>
+
+<div id="rangkuman" style="display: none;"> 
+            <button onclick="return recape('recape1')" class="rangkuman">
+                <a href="#" style="border-radius: 20px;">Rangkuman</a>                          
+            </button>
+        </div>
+
+			</div>
+
+			<div class="col-md-5" id="gambar">
+				<div id="deforestasi" class="imagecontent">
+					<img src="images/deforestasi.jpg" alt="" class="rounded img-fluid mx-auto">
+					<center>
+					<figcaption><b class="capt">Sumber:</b> <i>healththoroughfare.com</i></figcaption>
+					<figcaption><b class="capt">Gambar 7.</b> Deforestasi menyebabkan pemanasan global</figcaption>
+				</center>
+			</div>
+			<div id="pertanian" class="imagecontent">
+					<img src="images/pertanian.png" alt="" class="rounded img-fluid mx-auto">
+					<center>
+					<figcaption><b class="capt">Sumber:</b> <i>biotrent.co.id</i></figcaption>
+					<figcaption><b class="capt">Gambar 8.</b> Penggunaan pupuk kimia menghasilkan emisi Dinitrogen oksida (N₂O)</figcaption>
+				</center>
+			</div>
+<div id="peternakan" class="imagecontent">
+  <img src="images/peternakan.jpg" class="rounded img-fluid mx-auto">
+  				<center>
+					<figcaption><b class="capt">Sumber:</b> <i>krishijagran.com</i></figcaption>
+					<figcaption><b class="capt">Gambar 9.</b> Hewan ternak menghasilkan gas metana CH₄</figcaption>
+				</center>
+</div>
+<div id="sampah" class="imagecontent">
+  <img src="images/sampah.jpg" class="rounded img-fluid mx-auto">
+  				<center>
+					<figcaption><b class="capt">Sumber:</b> <i></i></figcaption>
+					<figcaption><b class="capt">Gambar 10.</b> Pembusukan sampah menyumbang gas metana</figcaption>
+				</center>
+</div>
+<div id="freon" class="imagecontent">
+  <img src="images/ac.jpg" class="rounded img-fluid mx-auto">
+  				<center>
+					<figcaption><b class="capt">Sumber:</b> <i></i></figcaption>
+					<figcaption><b class="capt">Gambar 11.</b> Penggunaan CFC pada mesin pendingin</figcaption>
+				</center>
+</div>
+<div id="semprotan" class="imagecontent">
+  <img src="images/kalengsemprot.jpg" class="rounded img-fluid mx-auto">
+  				<center>
+					<figcaption><b class="capt">Sumber:</b> <i></i></figcaption>
+					<figcaption><b class="capt">Gambar 12.</b> Penggunaan CFC pada produk aerosol/semprotan</figcaption>
+				</center>
+</div>
+
+			</div>
+		</div>
+		</div>
+
+</div>
+<div id="recape1" class="parentDisable"></div>
+<div class="card recape">
+ <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
+		<h4>Apa yang telah kita pelajari?</h4>
+			<p>Pemanasan global disebabkan oleh banyaknya aktivitas manusia yang menghasilkan gas rumah kaca, aktivitas tersebut diantaranya penggunaan bahan bakar fosil, deforestasi, pertanian, peternakan, pembuangan sampah, dan penggunaan alat-alat yang mengandung CFC.
+			</p>
+
+<button class=" close_recape" style="float: right;">selesai</button>
+	</div>
+
+        <div class="container">
+        <div class="popup2">
+	<h5>Nenek bertongkat kakek berkumis<br>Materi udah disikat, waktunya jawab kuis!</h5>
+	<button class=" close_popup2">Kuis &raquo;</button>
+</div>	
+ 	
+	</div>
+</div>
+					
+
+	</body>
+<script>
+	const rangkuman = document.querySelector(".rangkuman");
+      const recape = document.querySelector('.recape');
+      const popup2 = document.querySelector('.popup2');
+      const close_recape = document.querySelector('.close_recape');
+      const close_popup2 = document.querySelector('.close_popup2');
+      var sound = new Audio();
+      
+ 
+      rangkuman.addEventListener("click", () => {
+        recape.classList.add('active');     
+        document.getElementById("recape1").style.display='block';
+        return false;     
+   
+	});
+      close_recape.addEventListener('click', () => {
+      	recape.classList.remove('active');
+        popup2.classList.add('active');
+      
+var duration = 5 * 1000;
+var animationEnd = Date.now() + duration;
+var defaults = { startVelocity: 20, spread: 360, ticks: 50, zIndex: 9999 };
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+var interval = setInterval(function() {
+  var timeLeft = animationEnd - Date.now();
+
+  if (timeLeft <= 0) {
+    return clearInterval(interval);
+  }
+
+  var particleCount = 80 * (timeLeft / duration);
+  // since particles fall down, start a bit higher than random
+  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+}, 250);
+
+});
+
+      close_popup2.addEventListener('click', () => {
+      	popup2.classList.remove('active');   
+      	location.href = 'kuis1.html';
+      });
+
+	</script>
+	  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+            
+            
+        });
+        
+
+function openGambar(evt, imageName) {
+  var i, imagecontent, imagelinks;
+  imagecontent = document.getElementsByClassName("imagecontent");
+  for (i = 0; i < imagecontent.length; i++) {
+    imagecontent[i].style.display = "none";
+  }
+  imagelinks = document.getElementsByClassName("imagelinks");
+  for (i = 0; i < imagelinks.length; i++) {
+    imagelinks[i].className = imagelinks[i].className.replace(" active", "");
+  }
+  document.getElementById(imageName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+
+
+
+function myFunction(x){
+	if(x.matches){
+		document.getElementById("gambar").style="display:none"
+		document.getElementById("deforestasi2").innerHTML=`<img src="images/deforestasi.jpg" alt="" class="rounded imagecontent2">
+		<center>
+					<figcaption><b class="capt">Sumber:</b> <i>healththoroughfare.com</i></figcaption>
+					<figcaption><b class="capt">Gambar 7.</b> Deforestasi menyebabkan pemanasan global</figcaption>
+				</center>`
+		document.getElementById("pertanian2").innerHTML=`<img src="images/pertanian.jpg" class="rounded imagecontent2">
+		<center>
+					<figcaption><b class="capt">Sumber:</b> <i>biotrent.co.id</i></figcaption>
+					<figcaption><b class="capt">Gambar 8.</b> Penggunaan pupuk kimia menghasilkan emisi N₂O</figcaption>
+				</center>`
+		document.getElementById("peternakan2").innerHTML=`<img src="images/peternakan.jpg" class="rounded imagecontent2">
+				<center>
+					<figcaption><b class="capt">Sumber:</b> <i>krishijagran.com</i></figcaption>
+					<figcaption><b class="capt">Gambar 9.</b> Hewan ternak menghasilkan gas metana </figcaption>
+				</center>`
+		document.getElementById("sampah2").innerHTML=`<img src="images/sampah.jpg" class="rounded imagecontent2">
+				<center>
+					<figcaption><b class="capt">Sumber:</b> <i></i></figcaption>
+					<figcaption><b class="capt">Gambar 10.</b> Pembusukan sampah menyumbang gas metana CH₄</figcaption>
+				</center>`
+		document.getElementById("freon2").innerHTML=`<img src="images/AC.jpg" class="rounded imagecontent2">
+  				<center>
+					<figcaption><b class="capt">Sumber:</b> <i></i></figcaption>
+					<figcaption><b class="capt">Gambar 11.</b> Penggunaan CFC pada mesin pendingin</figcaption>
+				</center>`
+		document.getElementById("semprotan2").innerHTML=`<img src="images/kalengsemprot.jpg" class="rounded imagecontent2">
+  				<center>
+					<figcaption><b class="capt">Sumber:</b> <i></i></figcaption>
+					<figcaption><b class="capt">Gambar 12.</b> Penggunaan CFC pada produk aerosol/semprotan </figcaption>
+				</center>`
+
+	}
+	else{
+		document.getElementById("gambar").style = "display:block";
+		document.getElementById("deforestasi2").innerHTML = ``
+		document.getElementById("pertanian2").innerHTML = ``
+		document.getElementById("peternakan2").innerHTML = ``
+		document.getElementById("sampah2").innerHTML = ``
+		document.getElementById("freon2").innerHTML = ``
+		document.getElementById("semprotan2").innerHTML = ``
+	}
+
+}
+var x = window.matchMedia("(max-width: 700px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+
+
+function openSidebar() {
+	document.getElementById("sidebar").style.width = "250px";
+	document.getElementById("sidebar").style.overflow = "hidden";
+	document.getElementById("sidebar").style.marginLeft = "0";
+	
+	document.getElementById("konten").style.marginLeft = "270px";
+}
+
+function closeSidebar() {
+	document.getElementById("sidebar").style.width = "0";
+	document.getElementById("sidebar").style.marginLeft = "0";
+	document.getElementById("konten").style.marginLeft = "1rem";
+
+}
+
+function salah_no1() {
+	document.getElementById("incorrect_answer").style.display ="inline";
+	document.getElementById("correct_answer").style.display ="none";
+	document.getElementById("respon").innerHTML ="*pilih jawaban lain";
+	document.getElementById("soal2").style.display ="none";
+	
+}
+
+function benar_no1() {
+	document.getElementById("correct_answer").style.display ="inline";
+	document.getElementById("incorrect_answer").style.display ="none";
+	document.getElementById("respon").innerHTML ="";
+	document.getElementById("soal2").style.display = "block"
+	
+	document.getElementById("1_a").disabled = true;
+	document.getElementById("1_b").disabled = true;
+	document.getElementById("1_d").disabled = true;
+
+
+}
+
+function salah_no2() {
+	document.getElementById("incorrect_answer2").style.display ="inline";
+	document.getElementById("correct_answer2").style.display ="none";
+	document.getElementById("respon2").innerHTML ="*pilih jawaban lain";
+}
+
+function benar_no2() {
+	document.getElementById("correct_answer2").style.display ="inline";
+	document.getElementById("incorrect_answer2").style.display ="none";
+	document.getElementById("respon2").innerHTML ="";
+	document.getElementById("2_b").disabled = true;
+	document.getElementById("2_c").disabled = true;
+	document.getElementById("2_d").disabled = true;
+	document.getElementById("rangkuman").style.display ="block";
+
+
+}
+
+	
+</script>
+	
+
+</html>

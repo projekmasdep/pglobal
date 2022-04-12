@@ -1,0 +1,206 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+.nav{
+    background-color:#155263 ;
+    overflow:;
+    display:;
+    position:fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index:11;
+    max-width: unset;
+    height:;
+    transition: all .3s;
+    
+}
+
+.nav a{
+    display:;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    padding:20px 20px ;
+
+}
+
+.nav a:hover{
+    background-color: #dddd;
+    color: black;
+}
+
+#menubar{
+    display: block;
+    transition: ;
+}
+
+.apersepsi{
+    background-color: #fafafa;
+    top: 9.5vh;
+    height: 90%;
+    width:; 
+    margin-left:1rem;
+    margin-top:;
+    left: 0px;
+    right:1rem;
+    transition: margin-left 0.5s;
+    border-radius:;
+    padding: ;
+    overflow:;
+    background-color:#fff;
+    position:absolute;
+    z-index: ;
+}
+
+.login{
+    float: left;
+    left: 50%;
+    top: 50%;
+    margin-top: 20rem;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: ; 
+    padding: 30px;
+    margin: 20px; 
+    border-radius: 5px;
+    border: 1.5px dotted teal;
+    font-size: 15px;
+    
+    
+
+}
+
+.judulmateri{
+    position:;
+    width:;
+    height:;
+    font-size:20px;
+    text-weight:;
+    text-decoration-style: ;
+    text-shadow: ;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 1px;
+    color:;
+    margin: 0;
+    margin-top:5px;
+    z-index: 999;
+    border-top-right-radius:;
+border-top-left-radius: ;
+borderd-bottom-right-radius: ;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
+    padding:0.4rem;
+    padding-bottom: ; 
+background-color:#Fff ;
+    border-bottom: ;
+    margin-bottom:10px;
+
+}
+
+
+.slide{
+    position: absolute;
+    out
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+.active-slide{
+    opacity: 1;
+    z-index: 2;
+}
+.card{
+    
+    position: relative;
+   
+}
+.card1 {
+    width:300px;
+    
+}
+.card_body{
+    width: 350px;
+}
+.quiz-container{
+
+    position: relative;
+    height: 300px;
+    overflow: auto;
+}
+.btn-kuis{
+        margin-bottom: 5px;
+    margin-left: 0.2rem;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    background-color: #ff6f3c;
+    border-radius: 20px;
+    text-align: center;
+    border:none;
+
+}
+
+.btn-kuis:hover{
+    background-color: #0e3b53;
+    color: #fff;
+}
+.question{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+    font-weight: ;
+}
+.answers {
+    margin-bottom: 25px;
+    text-align: left;
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+.answers label{
+    display: block;
+    margin-bottom: 10px;
+}
+.color{
+    background-color: #77dd66;
+    color: #fff;
+
+}
+.btn-selesai{
+    color: #fafafa;
+    background-color: #f30319;
+    border-color: #f30319;
+    height: 38px;
+    border-radius: 5px;
+}
+.btn-selesai:hover{
+    background-color:#d60f0f ;
+    border-color: #d60f0f;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #4a4747;
+    border-color: #4a4747;
+}
+.btn-primary:hover{
+    background-color:#312f2f;
+    border-color: #4a4747;
+}
+@media only screen and(max-width: 768px){
+    .quiz-container{
+        height: 500px;
+
+    }
+    .card {
+        width: 100%;
+    }
+
+    .number-btn{
+        float: none;
+    }
+}

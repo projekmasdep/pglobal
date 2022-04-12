@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>Pemanasan Global</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CDN jquery (with ajax) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- CSS bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- CSS file -->
+    <link rel="stylesheet" href="styleeva.css">
+   
+    <!-- JS bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- font by googlefont -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <!-- icon by fontawesome -->
+    <script src="https://kit.fontawesome.com/ba84381fa8.js" crossorigin="anonymous"></script>
+    
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 nav">
+                
+                    <a href="#"><i class="fas fa-home"></i></a>
+
+                    <img src="images/58transparent.svg" class= " img-fluid " style= "max-width:70%">
+                    
+                </div>
+            </div>  
+        </div>
+        
+<div class="apersepsi">
+        <div class="container" >
+        <div class="row justify-content-center"style="" >
+            <div class="col-12" >
+                <div class="card mt-5"  style="outline: 1px solid teal">
+                    <div class="card-body font" >
+                        <h3 class="text-center kuis-judul" style="">KUIS 2</h3>
+                        <hr >
+                        <p class="text-justify">
+                            <a style="color: rgb(6 106 136 / 90%);font-weight: 600 ">Petunjuk Pengerjaan</a>
+
+                            <ol class="ol-akv">
+                                <li>Masukkan nama, dan kelas, kuis pada isian di bawah ini. Kemudian klik tombol "Mulai".</li>
+                                <li>Waktu pengerjaan adalah 40 menit. Jika waktu pengerjaan habis, maka tampilan akan beralih ke halaman hasil.</li>
+                                <li>Pada bagian kiri atas terdapat timer yang menunjukkan sisa waktu pengerjaan.</li>
+                                <li>Jumlah soal sebanyak 10 buah dalam bentuk pilihan ganda.</li>
+                                <li>Klik salah satu pilihan jawaban yang dianggap benar.</li>
+                            </ol>
+                        </p>
+                        <hr>
+                        <form >
+                            <!-- Grid row -->
+                            
+                            <div class="form-group row center" >
+                                <!-- Default input -->
+                                <label class="col-sm-1 label-kuis col-form-label">Nama :</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="name" placeholder="Masukkan Nama">
+                                    </div>
+                            </div>
+
+                            <div class="form-group row center" >
+                                <!-- Default input -->
+                                <label class="col-sm-1 label-kuis col-form-label">Kelas :</label>
+                                
+                                <div class="col-sm-5">
+                                    <select class="form-control" id="kls">
+                                        <option disabled selected>Masukkan Kelas</option>
+                                        <option>7 A</option>
+                                        <option>7 B</option>
+                                        <option>7 C</option>
+                                        
+                                    </select
+                                    ></div>
+                            </div>            
+
+                        </form>
+                    
+
+                        <div class="center">
+                            <div class="salah-tok" id="tok"></div>
+
+                            <a class="btn btn-outline-secondary btn-kembali" href="upaya2.html">Kembali ke materi</a>
+
+                           <button class="btn btn-warning btn-submit" id="submit">Mulai</button> &nbsp;<span id="tamp"></span>
+                            
+                        </div>                      
+                    </div>
+                </div>
+            </div>                           
+        </div>
+    </div>
+
+   
+   </div> 
+
+<script>
+
+    
+            
+let name = document.querySelector("#name")
+let kelas = document.querySelector("#kls")
+let btnSubmit = document.querySelector("#submit")
+    
+btnSubmit.addEventListener("click", function(){
+    if(name.value ==="" || kls.value ===""){
+        alert("Silakan isi nama dan kelas")
+    }else{
+        sessionStorage.setItem("name", name.value)
+        sessionStorage.setItem("kls", kls.value)
+        location.href='./kuis2.html'
+    }
+})
+
+
+</script>
+                
+    </body>
+
+</html>

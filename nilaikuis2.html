@@ -1,0 +1,182 @@
+<html>
+	<head>
+		<title>Pemanasan Global</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- CDN jquery (with ajax) -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+	<!-- CSS bootstrap -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- CSS file -->
+	<link rel="stylesheet" href="styletiga.css">
+	<!-- JS bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- font by googlefont -->
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+	<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+    rel="stylesheet">
+	<!-- icon by fontawesome -->
+	<script src="https://kit.fontawesome.com/ba84381fa8.js" crossorigin="anonymous"></script>
+	
+	</head>
+
+	<body>
+			
+<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 nav">
+				
+					<a href="javascript:void(0)" id="menubar" onclick="openSidebar();"aria-hidden="true"><i class="fas fa-bars "></i></a>
+
+					<a href="beranda.html"><i class="fas fa-home"></i></a>
+
+					<img src="images/58transparent.svg" class= " img-fluid " style= "max-width:70%">
+					
+				</div>
+			</div>	
+		</div>
+ 
+<div class="wrapper">
+
+
+		<div id="sidebar">
+			<div class="row">
+			<div class="col-md-12">	
+	
+	<p class="title">Daftar Nilai</p>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+		
+<ul class="list-unstyled components">
+                                             
+                        <li>
+                            <a href="nilaikuis1.html">Kuis 1</a>
+                        </li>
+                        <li class="active">
+                            <a href="#nilaikuis2.html">Kuis 2</a>
+                        </li>
+                        <li>
+                            <a href="nilaieva.html">Evaluasi</a>
+                        </li>
+                                    
+                </ul>
+
+	
+</div>
+</div>
+</div>
+
+		<div id="konten">
+        <div class="card mt-3">
+                <div class="card-header" style="background: lavender">
+                                        <div class="" style="font-family: 'Quicksand'; font-size: 24; text-align: center; color:black">DAFTAR NILAI KUIS 2</div>                                       
+                                    </div>
+           
+            <div class="card-body">
+           
+
+                <div class="table-responsive">
+                    <table class="table table-bordered" style="font-size: 15px;">
+                        <thead>
+                            <tr>
+                            <th style="vertical-align: middle; text-align:center">No.</th>
+                            <th style="vertical-align: middle; text-align:center">Nama</th>
+                            <th style="vertical-align: middle; text-align:center">Kelas</th>
+                            <th style="vertical-align: middle; text-align:center">Nilai</th>
+                            <th style="vertical-align: middle; text-align:center">Waktu Selesai</th>
+                            <th style="vertical-align: middle; text-align:center">Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="resultContainer">
+
+                        </tbody>
+                    </table>
+                </div>
+                     
+         
+            </div>
+        </div>
+
+			
+		</div>
+		
+		
+
+	</body>
+
+ <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+             	  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+<script>      
+var firebaseConfig = {
+    apiKey: "AIzaSyCsbsZGJr7zA_oVP4ZCm48Z5CtTuq1_x-c",
+    authDomain: "yulia-pglobal.firebaseapp.com",
+    projectId: "yulia-pglobal",
+    storageBucket: "yulia-pglobal.appspot.com",
+    messagingSenderId: "1004262270087",
+    appId: "1:1004262270087:web:fc0cdd17392f77cf454422",
+    measurementId: "G-B7WR4RDFRS"
+  };
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
+
+var database = firebase.database();
+database = firebase.database();
+
+    var ref = database.ref("kuis2");
+    var idx = 0;
+
+    let rc = document.querySelector('.resultContainer');
+
+    ref.on("child_added", function (data) {
+        idx += 1;
+
+        var vl = data.val();
+        rc.innerHTML +=
+            `<tr>
+                <td class="tdX" style="text-align: center">${idx}</td>
+                <td class="tdX">${vl.nama}</td>
+                <td class="tdX" style="text-align: center">${vl.kelas}</td>
+                <td class="tdX" style="text-align: center">${vl.nilai}</td>
+               <td class="tdX" style="text-align: center">${vl.waktu}</td>
+               <td class="tdX" style="text-align: center">${vl.keterangan}</td></tr>`;
+
+
+    })
+
+
+
+
+var x = window.matchMedia("(max-width: 700px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+
+function openSidebar() {
+	document.getElementById("sidebar").style.width = "250px";
+	document.getElementById("sidebar").style.overflow = "hidden";
+	document.getElementById("sidebar").style.marginLeft = "0";	
+	document.getElementById("konten").style.marginLeft = "270px";
+}
+
+function closeSidebar() {
+	document.getElementById("sidebar").style.width = "0";
+	document.getElementById("sidebar").style.marginLeft = "0";
+	document.getElementById("konten").style.marginLeft = "1rem";
+
+}
+
+
+</script>
+	
+
+</html>

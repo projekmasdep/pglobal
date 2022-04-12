@@ -1,0 +1,66 @@
+.slide{
+	position:absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.active-slide{
+	opacity:1;
+	z-index:999;
+}
+
+.card{
+	position: relative;
+
+}
+.card mt-5{
+	text-align: center;
+
+
+}
+
+
+.quiz-container{
+	position: relative;
+	height: 300px;
+	margin-top: 40px;
+}
+
+.question{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.answers{
+	margin-bottom: 20px;
+	text-align: left;
+	display: inline-block;
+}
+
+.answers label{
+	display: block;
+	margin-bottom: 10px;
+}
+
+.numberSoal{
+    width: 50%;
+}
+.color{
+    background-color: red;
+}
+
+@media only screen and (max-width: 500px){
+	.quiz-container{
+		height: 500px;
+	}
+}
+
+@media only screen and(max-width: 300px){
+	.quiz-container{
+		height: 700px;
+	}
+}

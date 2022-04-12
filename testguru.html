@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Suhu dan Kalor</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar1">
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="../index.html">Pretest</a>
+                </li>
+                <li>
+                    <a href="kuis1.html">Kuis 1</a>
+                </li>
+                <li>
+                    <a href="kuis2.html">Kuis 2</a>
+                </li>
+                <li>
+                    <a href="kuis3.html">Kuis 3</a>
+                </li>
+
+                <li>
+                    <a href="kuis4.html">Kuis 4</a>
+                </li>
+                <li class="active">
+                    <a href="#">Evaluasi</a>
+                </li>
+            </ul>
+
+
+        </nav>
+        <!-- Page Content  -->
+
+
+
+            <div class="table-responsive">
+<table class="table table-bordered" style="font-size: 15px;">
+                    <thead>
+                        <tr>
+                            <th style="vertical-align: middle; text-align:center">No.</th>
+                            <th style="vertical-align: middle; text-align:center">Nama</th>
+                            <th style="vertical-align: middle; text-align:center">Kelas</th>
+                            <th style="vertical-align: middle; text-align:center">Nilai</th>
+                            <th style="vertical-align: middle; text-align:center">Waktu selesai</th>
+                        </tr>
+
+                    </thead>
+                    <tbody class="tampil"></tbody>
+                </table>
+            </div>
+
+
+            </p><div style="padding-left:0px">
+                
+            </div>
+            <br />
+
+        </div>
+    </div>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- jQuery Custom Scroller CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar, #content').toggleClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+</script>
+
+<script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyCsbsZGJr7zA_oVP4ZCm48Z5CtTuq1_x-c",
+    authDomain: "yulia-pglobal.firebaseapp.com",
+    projectId: "yulia-pglobal",
+    storageBucket: "yulia-pglobal.appspot.com",
+    messagingSenderId: "1004262270087",
+    appId: "1:1004262270087:web:fc0cdd17392f77cf454422",
+    measurementId: "G-B7WR4RDFRS"
+  };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    database = firebase.database();
+
+    var ref = database.ref("kuis1");
+    var idx = 0;
+
+    let tp = document.querySelector('.tampil');
+
+    ref.on("child_added", function (data) {
+        idx += 1;
+
+        var vl = data.val();
+
+             tp.innerHTML +=
+            `<tr>
+                <td class="tdX" style="text-align: center">${idx}</td>
+                <td class="tdX">${vl.nama}</td>
+                <td class="tdX" style="text-align: center">${vl.kelas}</td>
+                <td class="tdX" style="text-align: center">${vl.nilai}</td>
+               <td class="tdX" style="text-align: center">${vl.waktu}</td></tr>
+               <td class="tdX" style="text-align: center">${vl.keterangan}</td></tr>`;
+   
+
+    })
+
+    
+
+   
+</script>
+</html>
